@@ -15,16 +15,16 @@ exports.handler = (event) => new Promise((resolve, reject) => {
 
     const queryParameters = event.queryStringParameters || {};
 
-    if (!queryParameters.width && !queryParameters.height) {
+    if (!queryParameters.w && !queryParameters.h) {
         return original(imageBucket, objectKey)
             .then(resolve)
             .catch(reject);
     }
 
-    const width = parseInt(queryParameters.width);
-    const height = parseInt(queryParameters.height);
+    const width = parseInt(queryParameters.w);
+    const height = parseInt(queryParameters.h);
 
-    if ((queryParameters.width && isNaN(width)) || (queryParameters.height && isNaN(height))) {
+    if ((queryParameters.w && isNaN(width)) || (queryParameters.height && isNaN(height))) {
         return reject(errorResponse(`width and height parameters must be integer`, 400));
     }
 
