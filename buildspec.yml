@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # Install nodejs https://nodejs.org/en/download/package-manager/
+      - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+      - apt-get install -y nodejs
+  pre_build:
+    commands:
+      - echo Running npm install
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run package
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo $CODEBUILD_SRC_DIR THIS IS WHERE THE BUILDRTIFACT GOES
+artifacts:
+  files:
+    - ./dist/**/*
