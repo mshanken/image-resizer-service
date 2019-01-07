@@ -64,7 +64,7 @@ Resources:
       Handler: index.handler
       Runtime: nodejs8.10
       Timeout: 60
-      CodeURi: /bundle.zip
+      CodeURi: /dist/bundle.zip
       MemorySize: !Ref MemorySize
       Policies:
       - S3ReadPolicy:
