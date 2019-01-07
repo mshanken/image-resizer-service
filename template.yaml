@@ -65,8 +65,8 @@ Resources:
       Runtime: nodejs8.10
       Timeout: 60
       Code:
-	S3Bucket: !Ref buildBucketName
-	S3Key: !Ref buildObjectKey
+        S3Bucket: !Ref buildBucketName
+        S3Key: !Ref buildObjectKey
       MemorySize: !Ref MemorySize
       Policies:
       - S3ReadPolicy:
