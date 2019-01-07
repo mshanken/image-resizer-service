@@ -64,9 +64,9 @@ Resources:
       Handler: index.handler
       Runtime: nodejs8.10
       Timeout: 60
-      Code:
-        S3Bucket: !Ref buildBucketName
-        S3Key: !Ref buildObjectKey
+      CodeURi:
+        Bucket: !Ref buildBucketName
+        Key: !Ref buildObjectKey
       MemorySize: !Ref MemorySize
       Policies:
       - S3ReadPolicy:
