@@ -14,9 +14,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - aws cloudformation package --template-file template.yaml --s3-bucket ms.deploy --output-template-file dist/template-packaged.yaml
 artifacts:
   type: zip
   files:
     - ./dist/**/*
-    - dist/template-packaged.yaml
