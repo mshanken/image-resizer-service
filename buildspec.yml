@@ -18,5 +18,5 @@ artifacts:
   type: zip
   files:
     - template.yaml
-  base-directory: './dist/*'
+    - index.js
   discard-paths: yes 
