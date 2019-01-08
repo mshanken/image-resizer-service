@@ -64,9 +64,7 @@ Resources:
       Handler: index.handler
       Runtime: nodejs8.10
       Timeout: 60
-      CodeURi: 
-        Bucket: https://s3.console.aws.amazon.com/s3/buckets/codepipeline-us-east-1-772341131719
-        Key: !Sub "Image-resizer-lambda/${Version}/dist/bundle.zip"
+      CodeURi: ./ 
       MemorySize: !Ref MemorySize
       Policies:
       - S3ReadPolicy:
