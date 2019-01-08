@@ -13,10 +13,10 @@ phases:
       - npm run build
   post_build:
     commands:
-      - mv ./dist/index.js ..
       - echo Build completed on `date`
 artifacts:
   type: zip
   files:
-    - index.js
     - template.yaml
+  base-directory: './dist/*'
+  discard-paths: yes 
