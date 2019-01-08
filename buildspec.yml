@@ -13,9 +13,10 @@ phases:
       - npm run build
   post_build:
     commands:
+      - mv ./dist/index.js ..
       - echo Build completed on `date`
 artifacts:
   type: zip
   files:
-    - ./dist/index.js
+    - index.js
     - template.yaml
