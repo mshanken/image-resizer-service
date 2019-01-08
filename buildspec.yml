@@ -10,7 +10,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo This is where the buil artifact will end up $CODE_BUCKET
       - npm run build
+      - aws cloudformation package --template-file template.yaml --s3-bucket $CODE_BUCKET --output-template-file /dist/template-packaged.yaml
   post_build:
     commands:
       - echo Build completed on `date`
@@ -18,4 +20,3 @@ phases:
 artifacts:
   files:
     - ./dist/**/*
-    - template.yaml
