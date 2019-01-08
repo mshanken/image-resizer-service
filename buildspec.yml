@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-us-east-1-772341131719 --kms-key-id 0f33e9ae-86d8-4d5a-bdd2-429a786f644d --output-template-file /dist/template-packaged.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-us-east-1-772341131719 --kms-key-id 0f33e9ae-86d8-4d5a-bdd2-429a786f644d --output-template-file dist/template-packaged.yaml
       - echo $CODEBUILD_SRC_DIR THIS IS WHERE THE BUILDRTIFACT GOES
 artifacts:
   files:
