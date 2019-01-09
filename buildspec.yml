@@ -10,7 +10,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - npm run package
+      - npm run build
+      - cloudformation package --template-file template.yaml --output-template-file dist/template-packaged.yml --s3-bucket $CODE_BUCKET --kms-key-id $KMS_KEY
   post_build:
     commands:
       - echo Build completed on `date`
