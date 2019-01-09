@@ -16,8 +16,6 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
-  type: zip
   files:
-    - template.yaml
-    - ./dist/index.js
+    - ./dist/tempalte-packaged.yaml
   discard-paths: yes 
