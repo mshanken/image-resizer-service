@@ -5,7 +5,7 @@
   "main": "src2/index.js",
   "scripts": {
     "build": "webpack",
-    "package": "npm run build && aws cloudformation package --template-file template.yaml --output-template-file dist/template-packaged.yml --s3-bucket $CODE_BUCKET",
+    "package": "npm run build && aws cloudformation package --template-file template.yaml --output-template-file dist/template-packaged.yml --s3-bucket $CODE_BUCKET --s3-prefix $BUCKET_PREFIX",
     "install-cf": "aws cloudformation deploy --template-file dist/template-packaged.yml --capabilities CAPABILITY_IAM --stack-name image-resizer-rest-api --parameter-overrides ImageBucket=$IMAGE_BUCKET",
     "deploy": "npm run package && npm run install-cf",
     "test": "jest"
